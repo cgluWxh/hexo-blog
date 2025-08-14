@@ -1,4 +1,65 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const initJumpBtn = () => {
+    // 获取回到顶部和回到底部的按钮
+    const topBtn = document.querySelector('.setting_tool a[title="回到顶部"]');
+    const bottomBtn = document.querySelector('.setting_tool a[title="回到底部"]');
+
+    // 回到顶部
+    topBtn.addEventListener('click', function (e) {
+      e.preventDefault(); // 阻止默认跳转
+      const scrollTarget = window.innerWidth < 960 ? document.documentElement : window;
+      scrollTarget.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // 回到底部
+    bottomBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      const scroller = window.innerWidth < 960 ? document.documentElement : window;
+      const scrollTarget = window.innerWidth < 960 ? document.documentElement : document.body;
+      scroller.scrollTo({ top: scrollTarget.scrollHeight, behavior: 'smooth' });
+    });
+
+    // 显示/隐藏按钮的函数
+    function updateBtnVisibility() {
+      let scrollTop, windowHeight, docHeight;
+      if (window.innerWidth < 960) {
+        scrollTop = document.documentElement.scrollTop;
+        windowHeight = window.innerHeight || document.documentElement.clientHeight;
+        docHeight = document.documentElement.scrollHeight;
+      } else {
+        scrollTop = window.scrollY || document.documentElement.scrollTop;
+        windowHeight = window.innerHeight || document.documentElement.clientHeight;
+        docHeight = document.documentElement.scrollHeight;
+      }
+
+      // 距离顶部小于50px，隐藏回到顶部按钮，否则显示
+      if (scrollTop < 50) {
+        topBtn.classList.add('fadeUp');
+        topVisible = false;
+      } else {
+        topBtn.classList.remove('fadeUp');
+        topVisible = true;
+      }
+
+      // 距离底部小于50px，隐藏回到底部按钮，否则显示
+      if (scrollTop + windowHeight >= docHeight - 50) {
+        bottomBtn.classList.add('fadeDown');
+        topBtn.classList.add('moveDown');
+        bottomVisible = false;
+      } else {
+        topBtn.classList.remove('moveDown');
+        bottomBtn.classList.remove('fadeDown');
+        bottomVisible = true;
+      }
+    }
+
+    // 初始设置
+    updateBtnVisibility();
+    // 监听滚动事件
+    window.addEventListener('scroll', updateBtnVisibility);
+    // 监听窗口大小变化
+    window.addEventListener('resize', updateBtnVisibility);
+  }
   if (!localStorage.initialized && location.pathname === "/") {
     const newHTML = `
       <style>
@@ -134,6 +195,7 @@ document.addEventListener("DOMContentLoaded", () => {
       document.querySelectorAll(".animated").forEach(e=>{
         e.classList.remove("animated");
         e.classList.remove("fadeInDown");
+        initJumpBtn();
         setTimeout(()=>e.classList.add("animated"),0);
         setTimeout(()=>e.classList.add("fadeInDown"),0);
       });
@@ -159,64 +221,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 3000);
     return;
   }
-  // 获取回到顶部和回到底部的按钮
-  const topBtn = document.querySelector('.setting_tool a[title="回到顶部"]');
-  const bottomBtn = document.querySelector('.setting_tool a[title="回到底部"]');
-
-  // 回到顶部
-  topBtn.addEventListener('click', function (e) {
-    e.preventDefault(); // 阻止默认跳转
-    const scrollTarget = window.innerWidth < 960 ? document.documentElement : window;
-    scrollTarget.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-
-  // 回到底部
-  bottomBtn.addEventListener('click', function (e) {
-    e.preventDefault();
-    const scroller = window.innerWidth < 960 ? document.documentElement : window;
-    const scrollTarget = window.innerWidth < 960 ? document.documentElement : document.body;
-    scroller.scrollTo({ top: scrollTarget.scrollHeight, behavior: 'smooth' });
-  });
-
-  // 显示/隐藏按钮的函数
-  function updateBtnVisibility() {
-    let scrollTop, windowHeight, docHeight;
-    if (window.innerWidth < 960) {
-      scrollTop = document.documentElement.scrollTop;
-      windowHeight = window.innerHeight || document.documentElement.clientHeight;
-      docHeight = document.documentElement.scrollHeight;
-    } else {
-      scrollTop = window.scrollY || document.documentElement.scrollTop;
-      windowHeight = window.innerHeight || document.documentElement.clientHeight;
-      docHeight = document.documentElement.scrollHeight;
-    }
-
-    // 距离顶部小于50px，隐藏回到顶部按钮，否则显示
-    if (scrollTop < 50) {
-      topBtn.classList.add('fadeUp');
-      topVisible = false;
-    } else {
-      topBtn.classList.remove('fadeUp');
-      topVisible = true;
-    }
-
-    // 距离底部小于50px，隐藏回到底部按钮，否则显示
-    if (scrollTop + windowHeight >= docHeight - 50) {
-      bottomBtn.classList.add('fadeDown');
-      topBtn.classList.add('moveDown');
-      bottomVisible = false;
-    } else {
-      topBtn.classList.remove('moveDown');
-      bottomBtn.classList.remove('fadeDown');
-      bottomVisible = true;
-    }
-  }
-
-  // 初始设置
-  updateBtnVisibility();
-  // 监听滚动事件
-  window.addEventListener('scroll', updateBtnVisibility);
-  // 监听窗口大小变化
-  window.addEventListener('resize', updateBtnVisibility);
-
+  initJumpBtn();
+  
 })
