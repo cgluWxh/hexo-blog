@@ -1,0 +1,19 @@
+doctype
+html(lang="zh-CN")
+	head
+		include head
+	body
+		script(src='/js/jquery.js')
+		script(src='/js/jquery-migrate-1.2.1.min.js')
+		script(src='/js/jquery.appear.js')
+		script(src='/js/cgl.js')
+		.covers
+		include sidebar
+		.main
+			include nav
+			block content
+		.setting_tool.iconfont
+			a(title='回到顶部', href='#top')
+				i.fa.fa-angle-up
+			a(title='回到底部', href='#bottom')
+				i.fa.fa-angle-down
