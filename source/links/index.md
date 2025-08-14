@@ -150,21 +150,17 @@ date: 2025-08-14 16:30:00
   .col-9 { width: 75%; margin-left: auto; margin-right: auto; }
 }
 
-/* 主容器：自动多列，间距16px */
 .link-main {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
   gap: 16px;
-  padding: 16px;
-  /* background: #f8fafc; */
 }
 
-/* 卡片容器：保持正方形，垂直排列，文字居中 */
 .jrotty-links {
   display: flex;
   flex-direction: column;
-  justify-content: center; /* 垂直居中 */
-  align-items: center;     /* 水平居中 */
+  justify-content: center;
+  align-items: center;
   aspect-ratio: 1 / 1;
 
   background: #fff;
@@ -175,7 +171,6 @@ date: 2025-08-14 16:30:00
   padding: 14px;
 }
 
-/* 图片：圆形，固定比例 */
 .jrotty-links img {
   width: 60%;
   max-width: 96px;
@@ -185,7 +180,6 @@ date: 2025-08-14 16:30:00
   margin-bottom: 10px;
 }
 
-/* 文字：水平居中显示 */
 .jrotty-links p {
   margin: 0;
   text-align: center;
@@ -193,7 +187,6 @@ date: 2025-08-14 16:30:00
   color: #0f172a;
 }
 
-/* 悬停 & 聚焦：发蓝光并轻微浮起 */
 a:hover .jrotty-links,
 .jrotty-links:hover {
 border-color: rgba(255,182,193,0.7);

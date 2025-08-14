@@ -54,14 +54,31 @@ figure.highlight {
 }
 
 figure.highlight table,figure.highlight tr,figure.highlight td {
-  width: 100%!important;
   border-collapse: collapse!important;
   padding: 0!important;
   margin: 0!important
 }
 
+figure.highlight table,figure.highlight tr,figure.highlight td:nth-child(2) {
+  width: auto!important;
+}
+
 figure.highlight .gutter {
-  display: none!important
+  width: min-content;  /* 关键修改：宽度由最小内容决定 */
+  min-width: min-content; /* 双重保障 */
+  white-space: nowrap;
+  text-align: right;
+  padding: 0 10px 0 5px;
+  background: #f5f5f5;
+  border-right: 1px solid #ddd;
+  color: #999;
+  user-select: none;
+}
+
+figure.highlight .gutter pre {
+  padding: 1.2em 0.8em!important;
+  line-height: 1.5em!important;
+  margin: 0!important
 }
 
 figure.highlight .code pre {
