@@ -89,7 +89,7 @@ archive_generator:
 keywords: cgluWxh
 author: cgluWxh,i@bilibiili.com
 description: A blog about programming, life, and everything in between.
-avatar: /avatar.jpg
+avatar: /images/avatar.jpg
 
 # Social Accounts
 rss: /atom.xml

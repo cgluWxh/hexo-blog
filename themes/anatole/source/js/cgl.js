@@ -213,11 +213,11 @@ document.addEventListener("DOMContentLoaded", () => {
     img.onerror = () => {
       clearTimeout(timer);
       timer = null;
-      biliRedirect.style.backgroundImage = "url(/fallbackBg.webp)";
+      biliRedirect.style.backgroundImage = "url(/images/fallbackBg.webp)";
       document.querySelector(".container").classList.add("visible");
     };
     timer = setTimeout(()=>{
-      img.src = "/fallbackBg.webp";
+      img.src = "/images/fallbackBg.webp";
     }, 3000);
     return;
   }
