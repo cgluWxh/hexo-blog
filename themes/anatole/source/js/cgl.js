@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // 监听窗口大小变化
     window.addEventListener('resize', updateBtnVisibility);
   }
-  if (!localStorage.initialized && location.pathname === "/") {
+  if (!localStorage.initialized && location.pathname === "/" && document.referrer === '') {
     const newHTML = `
       <style>
         #bili-redirect {
