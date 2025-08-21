@@ -16,6 +16,12 @@ date: 2025-08-14 16:30:00
             <p>北京原神大学</p>
         </div>
     </a>
+    <a href="https://chr0mium.link/" target="_blank">
+        <div class="jrotty-links waves-effect waves-button waves-float"><img
+                src="//q.qlogo.cn/g?b=qq&nk=3294212389&s=100">
+            <p>Cr's Blog</p>
+        </div>
+    </a>
     <a href="https://barand214.github.io/" target="_blank">
         <div class="jrotty-links waves-effect waves-button waves-float"><img
                 src="//q.qlogo.cn/g?b=qq&nk=2076583110&s=100">
