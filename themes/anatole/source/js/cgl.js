@@ -174,7 +174,7 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
         </div>
         <footer id="footer">
-          <div style="position: fixed; bottom: 12px">&copy; 2025 bilibiili.com. <a style="color:rgba(255, 255, 255, 0.76);font-size:small;" href="https://beian.miit.gov.cn/">湘ICP备2025134544号-1</a></div>
+          <div style="position: fixed; bottom: 12px">&copy; 2025 bilibiili.com. <a style="color:rgba(255, 255, 255, 0.76);font-size:small;" href="https://beian.miit.gov.cn/" rel="noreferrer nofollow" target="_blank">湘ICP备2025134544号-1</a> | <a href="https://beian.mps.gov.cn/#/query/webSearch?code=44030002007738" style="color:rgba(255, 255, 255, 0.76);font-size:small;" rel="noreferrer nofollow" target="_blank">粤公网安备44030002007738号</a></div>
         </footer>
       </div>
     `;
