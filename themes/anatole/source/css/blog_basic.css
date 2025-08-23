@@ -39,16 +39,16 @@
 }
 
 pre {
-  font-size: 0.8em!important;
+  font-size: 0.8rem!important;
   background-color: #f8f8f8!important;
   font-family: 'Roboto Mono','Lucida Console','Trebuchet MS','Courier New', Monaco, courier,'PingFang SC','Hiragino Sans GB','Microsoft Jhenghei','Microsoft YaHei', monospace!important
 }
 
 figure.highlight {
   position: relative!important;
-  margin: 1em 0!important;
+  margin: 1rem 0!important;
   border-radius: 2px!important;
-  line-height: 1.1em!important;
+  line-height: 1.1rem!important;
   background-color: #f8f8f8!important;
   overflow-x: auto!important
 }
@@ -76,14 +76,14 @@ figure.highlight .gutter {
 }
 
 figure.highlight .gutter pre {
-  padding: 1.2em 0.8em!important;
-  line-height: 1.5em!important;
+  padding: 1.2rem 0.8rem!important;
+  line-height: 1.5rem!important;
   margin: 0!important
 }
 
 figure.highlight .code pre {
-  padding: 1.2em 1.4em!important;
-  line-height: 1.5em!important;
+  padding: 1.2rem 1.4rem!important;
+  line-height: 1.5rem!important;
   margin: 0!important
 }
 
@@ -93,7 +93,7 @@ figure.highlight.html .code:after,figure.highlight.js .code:after,figure.highlig
   right: 0!important;
   color: #ccc!important;
   text-align: right!important;
-  font-size: 0.75em!important;
+  font-size: 0.75rem!important;
   padding: 5px 10px 0!important;
   line-height: 15px!important;
   height: 15px!important;

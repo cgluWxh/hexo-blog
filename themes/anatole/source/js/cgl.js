@@ -12,6 +12,30 @@ function loadStyle(url) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  const fixiOSFont = () => {
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+
+    if (isIOS && isSafari) {
+        // 创建一个<style>元素
+        const style = document.createElement('style');
+        
+        // 设置CSS规则
+        const css = `
+            figure.highlight .gutter pre {
+              display: none;
+            }
+        `;
+        
+        // 将CSS规则添加到<style>元素中
+        style.appendChild(document.createTextNode(css));
+        
+        // 将<style>元素添加到<head>中，使其生效
+        document.head.appendChild(style);
+        
+        console.log("iOS Safari: Injected CSS to set pre font-size to 14px.");
+    }
+  }
   const initJumpBtn = () => {
     // 获取回到顶部和回到底部的按钮
     const topBtn = document.querySelector('.setting_tool a[title="回到顶部"]');
@@ -98,6 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const init = () => {
+    fixiOSFont();
     initJumpBtn();
     initKatex();
   }
