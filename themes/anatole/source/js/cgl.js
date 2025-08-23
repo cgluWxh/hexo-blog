@@ -1,3 +1,16 @@
+function loadScript(url, onload) {
+  const script = document.createElement('script');
+  script.src = url;
+  script.onload = onload;
+  document.head.appendChild(script);
+}
+function loadStyle(url) {
+  const link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.href = url;
+  document.head.appendChild(link);
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   const initJumpBtn = () => {
     // 获取回到顶部和回到底部的按钮
@@ -59,6 +72,34 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener('scroll', updateBtnVisibility);
     // 监听窗口大小变化
     window.addEventListener('resize', updateBtnVisibility);
+  }
+
+  const initKatex = () => {
+    const postPage = document.querySelector('.post-page');
+    if (!postPage) return;
+    if (!document.querySelector('.post-page').innerHTML.includes("$$")) return;
+    loadScript('https://cdn.bootcdn.net/ajax/libs/KaTeX/0.16.9/katex.min.js', () => {
+      loadScript('https://cdn.bootcdn.net/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js', () => {
+          loadStyle('https://cdn.bootcdn.net/ajax/libs/KaTeX/0.16.9/katex.min.css');
+          // 初始化 KaTeX
+          renderMathInElement(postPage, {
+            // customised options
+            // • auto-render specific keys, e.g.:
+            delimiters: [
+                {left: '$$', right: '$$', display: false},
+                // {left: '\\(', right: '\\)', display: false},
+                // {left: '\\[', right: '\\]', display: true}
+            ],
+            // • rendering keys, e.g.:
+            throwOnError : false
+          });
+      });
+    });
+  }
+
+  const init = () => {
+    initJumpBtn();
+    initKatex();
   }
   if (!localStorage.initialized && location.pathname === "/" && document.referrer === '') {
     const newHTML = `
@@ -195,7 +236,7 @@ document.addEventListener("DOMContentLoaded", () => {
       document.querySelectorAll(".animated").forEach(e=>{
         e.classList.remove("animated");
         e.classList.remove("fadeInDown");
-        initJumpBtn();
+        init();
         setTimeout(()=>e.classList.add("animated"),0);
         setTimeout(()=>e.classList.add("fadeInDown"),0);
       });
@@ -221,19 +262,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 3000);
     return;
   }
-  initJumpBtn();
-  const postPage = document.querySelector('.post-page');
-  postPage && renderMathInElement(postPage, {
-    // customised options
-    // • auto-render specific keys, e.g.:
-    delimiters: [
-        {left: '$$', right: '$$', display: false},
-        {left: '$', right: '$', display: false},
-        {left: '\\(', right: '\\)', display: false},
-        {left: '\\[', right: '\\]', display: true}
-    ],
-    // • rendering keys, e.g.:
-    throwOnError : false
-  });
+  init();
   
 })

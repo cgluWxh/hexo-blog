@@ -188,7 +188,6 @@ date: 2025-08-14 16:30:00
 .jrotty-links p {
   margin: 0;
   text-align: center;
-  font-size: 14px;
   color: #0f172a;
 }
 
