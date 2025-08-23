@@ -168,7 +168,6 @@ date: 2025-08-14 16:30:00
   justify-content: center;
   align-items: center;
   aspect-ratio: 1 / 1;
-
   background: #fff;
   border-radius: 16px;
   border: 1px solid #ddd;
@@ -178,8 +177,8 @@ date: 2025-08-14 16:30:00
 }
 
 .jrotty-links img {
-  width: 60%;
-  max-width: 96px;
+  width: 6em;
+  height: 6em;
   aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: 50%;
@@ -202,6 +201,5 @@ border-color: rgba(255,182,193,0.7);
         0 0 40px rgba(255,182,193,0.2);
   transform: translateY(-4px);
 }
-
 </style>
 {% endraw %}

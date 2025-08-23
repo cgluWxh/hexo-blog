@@ -222,5 +222,18 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
   initJumpBtn();
+  const postPage = document.querySelector('.post-page');
+  postPage && renderMathInElement(postPage, {
+    // customised options
+    // • auto-render specific keys, e.g.:
+    delimiters: [
+        {left: '$$', right: '$$', display: false},
+        {left: '$', right: '$', display: false},
+        {left: '\\(', right: '\\)', display: false},
+        {left: '\\[', right: '\\]', display: true}
+    ],
+    // • rendering keys, e.g.:
+    throwOnError : false
+  });
   
 })
