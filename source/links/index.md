@@ -80,9 +80,9 @@ date: 2025-08-14 16:30:00
 </div>
 {% endraw %}
 
-#### 小学 & 初中的链接们
+<!-- #### 小学 & 初中的链接们 -->
 {% raw %}
-<div class="col-mb-12 col-9 link-main">
+<!-- <div class="col-mb-12 col-9 link-main">
 <a href="//idiot.moe" target="_blank">
     <div class="jrotty-links waves-effect waves-button waves-float"><img
             src="//q.qlogo.cn/g?b=qq&nk=3365924403&s=100">
@@ -145,7 +145,7 @@ date: 2025-08-14 16:30:00
         <p>曾浩正</p>
     </div>
 </a>
-</div>
+</div> -->
 {% endraw %}
 {% raw %}
 <style>
