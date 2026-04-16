@@ -4,7 +4,7 @@ date: 2026-04-16 21:40:00
 tags: Dev
 ---
 
-# 拦截 parentNode 为 null 时的 removeChild 崩溃
+#### 拦截 parentNode 为 null 时的 removeChild 崩溃
 
 核心思路：重写 `Node.prototype.parentNode` 的 getter. 当检测到特定调用栈且父节点为 `null` 时, 返回一个带有空方法（no-op）的假对象, 从而避免 `null.removeChild()` 报错. 
 
