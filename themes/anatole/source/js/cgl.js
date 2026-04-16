@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // 将CSS规则添加到<style>元素中
         style.appendChild(document.createTextNode(css));
         
-        // 将<style>元素添加到<head>中，使其生效
+        // 将<style>元素添加到<head>中, 使其生效
         document.head.appendChild(style);
         
         console.log("iOS Safari: Injected CSS to set pre font-size to 14px.");
@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
         docHeight = document.documentElement.scrollHeight;
       }
 
-      // 距离顶部小于50px，隐藏回到顶部按钮，否则显示
+      // 距离顶部小于50px, 隐藏回到顶部按钮, 否则显示
       if (scrollTop < 50) {
         topBtn.classList.add('fadeUp');
         topVisible = false;
@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
         topVisible = true;
       }
 
-      // 距离底部小于50px，隐藏回到底部按钮，否则显示
+      // 距离底部小于50px, 隐藏回到底部按钮, 否则显示
       if (scrollTop + windowHeight >= docHeight - 50) {
         bottomBtn.classList.add('fadeDown');
         topBtn.classList.add('moveDown');

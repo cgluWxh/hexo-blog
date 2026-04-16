@@ -32,7 +32,7 @@ prefix2.bilibiili.com {
             header_up Connection {>Connection}
             header_up Upgrade {>Upgrade}
 
-            # 可选但推荐：设置较长的超时时间，因为 WebSocket 是长连接
+            # 可选但推荐：设置较长的超时时间, 因为 WebSocket 是长连接
             transport http {
                 read_timeout 300s
                 write_timeout 300s

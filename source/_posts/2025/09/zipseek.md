@@ -4,7 +4,7 @@ date: 2025-09-11 11:00:00
 tags: Dev
 ---
 
-偶然看见文章 [https://www.akams.cn/posts/zip-list](https://www.akams.cn/posts/zip-list) 提到可以通过下载 ZIP 文件的最后一部分来查看其内部结构。写了个 Bash 脚本实现这个功能。
+偶然看见文章 [https://www.akams.cn/posts/zip-list](https://www.akams.cn/posts/zip-list) 提到可以通过下载 ZIP 文件的最后一部分来查看其内部结构. 写了个 Bash 脚本实现这个功能. 
 
 ```sh
 #!/bin/bash
@@ -24,7 +24,7 @@ fi
 
 echo "文件总大小: $LEN 字节"
 
-# 下载最后 1MB (如果文件比1MB小，就全下)
+# 下载最后 1MB (如果文件比1MB小, 就全下)
 START=$(( LEN > 1048576 ? LEN - 1048576 : 0 ))
 curl -s --range "$START"-"$LEN" -o "$TMPFILE" "$LINK"
 

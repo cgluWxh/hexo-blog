@@ -4,7 +4,7 @@ date: 2025-09-06 14:00:00
 tags: Dev
 ---
 
-Go 写一个小服务端跑在路由器上，外部经路由器访问，向局域网内的设备发送 Wake-on-LAN 魔术包。
+Go 写一个小服务端跑在路由器上, 外部经路由器访问, 向局域网内的设备发送 Wake-on-LAN 魔术包. 
 
 ```bash
 go get -u github.com/gin-gonic/gin
