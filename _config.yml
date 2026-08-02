@@ -76,8 +76,8 @@ theme: anatole
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repository: https://@github.com/wzb1244/wzb1244.github.io.git
-  branch: master
+  repository: git@github.com:cgluWxh/hexo-blog.git
+  branch: gh-pages
 
 archive_generator:
   per_page: 0
